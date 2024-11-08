@@ -62,7 +62,7 @@
                  p_155017_.litDuration = p_155017_.litTime;
                  if (p_155017_.isLit()) {
                      flag1 = true;
-+                    var remainder = itemstack.getCraftingRemainder();
++                    var remainder = net.neoforged.neoforge.common.CommonHooks.getCraftingRemainder(itemstack);
 +                    if (!remainder.isEmpty())
 +                        p_155017_.items.set(1, remainder);
 +                    else

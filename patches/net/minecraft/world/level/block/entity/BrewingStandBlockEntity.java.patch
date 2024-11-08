@@ -13,7 +13,7 @@
          }
  
 +        net.neoforged.neoforge.event.EventHooks.onPotionBrewed(p_155293_);
-+        ItemStack itemstack1 = itemstack.getCraftingRemainder();
++        ItemStack itemstack1 = net.neoforged.neoforge.common.CommonHooks.getCraftingRemainder(itemstack);
          itemstack.shrink(1);
 -        ItemStack itemstack1 = itemstack.getItem().getCraftingRemainder();
          if (!itemstack1.isEmpty()) {

@@ -6,6 +6,7 @@
          for (int i = 0; i < nonnulllist.size(); i++) {
 -            Item item = p_380223_.getItem(i).getItem();
 +            ItemStack item = p_380223_.getItem(i);
-             nonnulllist.set(i, item.getCraftingRemainder());
+-            nonnulllist.set(i, item.getCraftingRemainder());
++            nonnulllist.set(i, net.neoforged.neoforge.common.CommonHooks.getCraftingRemainder(item));
          }
  

@@ -5,7 +5,7 @@
          for (int i = 0; i < nonnulllist.size(); i++) {
              ItemStack itemstack = p_344763_.getItem(i);
 -            ItemStack itemstack1 = itemstack.getItem().getCraftingRemainder();
-+            ItemStack itemstack1 = itemstack.getCraftingRemainder();
++            ItemStack itemstack1 = net.neoforged.neoforge.common.CommonHooks.getCraftingRemainder(itemstack);
              if (!itemstack1.isEmpty()) {
                  nonnulllist.set(i, itemstack1);
              } else if (itemstack.getItem() instanceof WrittenBookItem) {
