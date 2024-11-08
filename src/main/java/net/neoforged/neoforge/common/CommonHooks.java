@@ -739,7 +739,7 @@ public class CommonHooks {
     }
 
     public static ItemStack getCraftingRemainder(ItemStack stack) {
-        stack = stack.getCraftingRemainder();
+        stack = stack.getItem().getCraftingRemainder(stack);
         if (!stack.isEmpty() && stack.isDamageableItem() && stack.getDamageValue() > stack.getMaxDamage()) {
             EventHooks.onPlayerDestroyItem(craftingPlayer.get(), stack, null);
             return ItemStack.EMPTY;

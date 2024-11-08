@@ -61,7 +61,7 @@ public interface IItemStackExtension {
      * @return The resulting ItemStack
      */
     default ItemStack getCraftingRemainder() {
-        return self().getItem().getCraftingRemainder(self());
+        return CommonHooks.getCraftingRemainder(self());
     }
 
     /**
