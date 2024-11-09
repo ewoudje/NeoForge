@@ -61,7 +61,12 @@ public interface IItemStackExtension {
      * @return The resulting ItemStack
      */
     default ItemStack getCraftingRemainder() {
-        return CommonHooks.getCraftingRemainder(self());
+        ItemStack stack = self().getItem().getCraftingRemainder(self());
+        if (!stack.isEmpty() && stack.isDamageableItem() && stack.getDamageValue() > stack.getMaxDamage()) {
+            EventHooks.onPlayerDestroyItem(craftingPlayer.get(), stack, null);
+            return ItemStack.EMPTY;
+        }
+        return stack;
     }
 
     /**
